@@ -40,12 +40,44 @@ function onPaletteClick(){
   currentColor.addClass('active')
 }
 
-$('.palette button').click(onPaletteClick);
-
 function onGridClick(){
     const currentColor = $('.palette .active').css('background-color')
     const currentCell = $(this)
-    currentCell.css('backgroundColor', currentColor)
+
+    if(currentCell.css('backgroundColor') === currentColor){
+      currentCell.css('backgroundColor', '')
+    } else {
+      currentCell.css('backgroundColor', currentColor)
+    }
+}
+
+function onClearClick(){
+  $('.grid .cell').css('backgroundColor', '')
+}
+
+function onFillAllClick (){
+  const currentColor = $('.palette .active').css('background-color')
+
+  $('.grid .cell').css('backgroundColor', currentColor)
+}
+
+function onFillEmptyClick(){
+  const currentColor = $('.palette .active').css('background-color')
+  const noColor = "rgba(0, 0, 0, 0)"
+
+    const elements = $('.grid .cell')
+    
+    for(let i = 0; i < elements.length; i++){
+      let nextElement = $(elements[i])
+
+      if(nextElement.css('backgroundColor') === noColor){
+        nextElement.css('backgroundColor', currentColor)
+      }
+    }
 }
 
 $('.grid .cell').click(onGridClick)
+$('.palette button').click(onPaletteClick);
+$('.controls .clear').click(onClearClick)
+$('.controls .fill-all').click(onFillAllClick)
+$('.controls .fill-empty').click(onFillEmptyClick)
