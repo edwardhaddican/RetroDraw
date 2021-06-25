@@ -8,14 +8,36 @@
   <body>
     <header>RETRO DRAW</header>
     <main>
+      
       <section class="palette">
       </section>
+      
       <section class="grid"></section>
       <section class="controls">
         <button class="fill-all">FILL ALL CELLS</button>
         <button class="fill-empty">FILL EMPTY CELLS</button>
         <button class="clear">CLEAR ALL CELLS</button>
+        
+        <section>
+          <form id='newColorForm'>
+            <label for="newColor">Add a Color:</label><br>
+            <input type="text" id="newColor" name="newColor"><br>
+            <input type="submit" value="Submit">
+          </form>
+        </section>
+
+        <section>
+          <form id='newGridForm'>
+            <label for="newHeight">Choose a height:</label><br>
+            <input type="number" step="1" id="newHeight" name="newHeight"><br>
+            <label for="newWidth">Choose a width:</label><br>
+            <input type="number" step="1" id="newWidth" name="newWidth"><br>
+            <input type="submit" value="Submit">
+          </form>
+        </section>
       </section>
+
+      
     </main>
   </body>
 </html>

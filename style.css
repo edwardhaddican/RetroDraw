@@ -26,6 +26,10 @@ main {
   align-items: flex-start;
 }
 
+.newColorForm{
+  padding: 1rem;
+}
+
 .palette, .controls {
   display: flex;
   flex-direction: column;
